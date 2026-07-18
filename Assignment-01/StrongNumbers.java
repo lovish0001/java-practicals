@@ -2,31 +2,25 @@ import java.util.Scanner;
 
 public class StrongNumbers {
 
-    // Method to calculate factorial
     public static int factorial(int n) {
         int fact = 1;
 
         for (int i = 1; i <= n; i++) {
             fact *= i;
         }
-
         return fact;
     }
 
-    // Method to check Strong Number
     public static boolean isStrong(int num) {
         int original = num;
         int sum = 0;
-
         while (num > 0) {
             int digit = num % 10;
             sum += factorial(digit);
             num /= 10;
         }
-
         return sum == original;
     }
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -43,7 +37,5 @@ public class StrongNumbers {
                 System.out.println(i);
             }
         }
-
-        sc.close();
     }
 }
